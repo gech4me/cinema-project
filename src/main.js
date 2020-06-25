@@ -27,9 +27,9 @@ new Vue({
             data() {
                 return {
                     movies: [
-                        { title: "Pulp Fiction"},
-                        { title: "Home Alone" },
-                        { title: "Austin Powers" }
+                        { title: "Pulp Fiction", genre: genres.CRIME },
+                        { title: "Home Alone", genre: genres.COMEDY },
+                        { title: "Austin Powers", genre: genres.COMEDY }
                     ],
                 }
             },

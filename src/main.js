@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import './style.scss';
+import axios from 'axios';
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import genres from './util/genres';
 import MovieList from "./components/MovieList";

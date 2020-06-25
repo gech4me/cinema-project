@@ -9,6 +9,7 @@
 
 <script>
     import genres from "../util/genres";
+    import CheckFilter from "./CheckFilter";
 
     export default {
         name: "MovieFilter",
@@ -23,24 +24,7 @@
             }
         },
         components: {
-            'check-filter': {
-                props: [ 'title' ],
-                data() {
-                    return {
-                        checked: false
-                    }
-                },
-                template: `<div :class="{ 'check-filter': true, 'active': checked}" @click="checkFilter">
-                                  <span class="checkbox"></span>
-                                  <span class="check-filter-title">{{ title }}</span>
-                               </div>`,
-                methods: {
-                    checkFilter() {
-                        this.checked = !this.checked;
-                        this.$emit('check-filter', 'genre', this.title, this.checked)
-                    }
-                }
-            }
+            CheckFilter
         }
     }
 </script>

@@ -27,5 +27,8 @@ new Vue({
     components: {
         MovieList,
         MovieFilter
+    },
+    created() {
+        console.log(axios)
     }
 });

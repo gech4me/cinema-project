@@ -1,11 +1,12 @@
 <template>
     <div id="movie-list">
-        <div v-for="movie in filteredMovies" class="movie">{{ movie.movie.Title }}</div>
+        <movie-item v-for="movie in filteredMovies" class="movie" :movie="movie"/>
     </div>
 </template>
 
 <script>
     import genres from "../util/genres";
+    import MovieItem from "./MovieItem";
 
     export default {
         name: "MovieList",
@@ -28,6 +29,9 @@
 
                 return this.genre.find(genre => movie.genre === genre);
             }
+        },
+        components: {
+            MovieItem
         }
     }
 </script>

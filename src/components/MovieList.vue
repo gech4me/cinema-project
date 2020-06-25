@@ -26,11 +26,12 @@
                     return true;
                 }
 
-                let movieGenre = movie.movie.Genre.split(",");
+                let movieGenre = movie.movie.Genre.split(", ");
                 let matched = true;
                    this.genre.forEach(genre => {
-                      matched = movieGenre.indexOf(genre) !== -1;
-
+                      if(movieGenre.indexOf(genre) === -1) {
+                          matched = false;
+                      }
                    })
                 return matched;
             }

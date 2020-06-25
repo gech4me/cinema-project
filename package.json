@@ -44,7 +44,7 @@
     "uglify-js": "~3.0.28",
     "vue": "~2.1.0",
     "vue-loader": "~10.0.0",
-    "vue-resource": "~1.0.3",
+    "vue-resource": "^1.5.1",
     "vue-router": "~2.1.1",
     "vue-style-loader": "~1.0.0",
     "vue-template-compiler": "~2.1.0",

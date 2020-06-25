@@ -1,6 +1,6 @@
 <template>
     <div id="movie-list">
-        <movie-item v-for="movie in filteredMovies" class="movie" :movie="movie"/>
+        <movie-item v-for="movie in filteredMovies" class="movie" :movie="movie.movie"/>
     </div>
 </template>
 
@@ -13,7 +13,7 @@
         props: ['genre', 'time','movies'],
         data() {
             return {
-                movies: [],
+
             }
         },
         computed: {

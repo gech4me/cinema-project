@@ -6,8 +6,8 @@ import genres from './util/genres';
 new Vue({
     el: '#app',
     methods: {
-      checkFilter() {
-          console.log("check filter clicked")
+      checkFilter(genre, title, checked) {
+          console.log(genre, title, checked)
       }
     },
     components: {
@@ -38,8 +38,8 @@ new Vue({
                             </div>
                         </div>`,
             methods: {
-                checkFilter: function () {
-                    this.$emit('check-filter')
+                checkFilter: function (genre, title, checked) {
+                    this.$emit('check-filter', genre, title, checked)
                 }
             },
             components: {
@@ -57,7 +57,7 @@ new Vue({
                     methods: {
                         checkFilter() {
                             this.checked = !this.checked;
-                            this.$emit('check-filter')
+                            this.$emit('check-filter', 'genre', this.title, this.checked)
                         }
                     }
                 }

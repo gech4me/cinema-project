@@ -5,6 +5,11 @@ import genres from './util/genres';
 
 new Vue({
     el: '#app',
+    methods: {
+      checkFilter() {
+          console.log("check filter clicked")
+      }
+    },
     components: {
         'movie-list': {
             template: `<div id="movie-list">
@@ -34,7 +39,7 @@ new Vue({
                         </div>`,
             methods: {
                 checkFilter: function () {
-                    console.log("check filter")
+                    this.$emit('check-filter')
                 }
             },
             components: {

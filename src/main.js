@@ -7,7 +7,7 @@ new Vue({
     el: '#app',
     data: {
         genre: [],
-        title: []
+        time: []
     },
     methods: {
       checkFilter(category, title, checked) {
@@ -32,7 +32,8 @@ new Vue({
                         { title: "Austin Powers" }
                     ],
                 }
-            }
+            },
+            props: ['genre', 'time']
         },
         'movie-filter': {
             data() {

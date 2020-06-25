@@ -5,7 +5,6 @@
 </template>
 
 <script>
-    import genres from "../util/genres";
     import MovieItem from "./MovieItem";
 
     export default {
@@ -27,7 +26,13 @@
                     return true;
                 }
 
-                return this.genre.find(genre => movie.genre === genre);
+                let movieGenre = movie.movie.Genre.split(",");
+                let matched = true;
+                   this.genre.forEach(genre => {
+                      matched = movieGenre.indexOf(genre) !== -1;
+
+                   })
+                return matched;
             }
         },
         components: {

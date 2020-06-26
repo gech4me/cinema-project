@@ -5,6 +5,7 @@
                         :movie="movie.movie"
                         :sessions="movie.sessions"
                         :day="day"
+                        :time="time"
             />
         </div>
         <div v-else-if="movies.length" class="no-results">
@@ -51,7 +52,7 @@
                 return matched;
             },
             sessionPassesTimeFilter(session) {
-                if(!this.day.isSame(session.time,'day')) {
+                if(!this.day.isSame(this.$moment(session.time),'day')) {
                     return false;
                 } else if(this.time.length === 0 || this.time.length === 2) {
                     return true;

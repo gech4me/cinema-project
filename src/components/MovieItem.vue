@@ -20,7 +20,7 @@
 <script>
     export default {
         name: "MovieItem",
-        props: ['movie','sessions'],
+        props: ['movie','sessions','day'],
         methods: {
             formatSessionTime(raw) {
                 return this.$moment(raw).format("h:mm A")

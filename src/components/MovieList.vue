@@ -1,7 +1,11 @@
 <template>
     <div id="movie-list">
         <div v-if="filteredMovies.length">
-            <movie-item v-for="movie in filteredMovies" class="movie" :movie="movie.movie" :sessions="movie.sessions"/>
+            <movie-item v-for="movie in filteredMovies"
+                        :movie="movie.movie"
+                        :sessions="movie.sessions"
+                        :day="day"
+            />
         </div>
         <div v-else-if="movies.length" class="no-results">
             No results
@@ -17,7 +21,7 @@
 
     export default {
         name: "MovieList",
-        props: ['genre', 'time','movies'],
+        props: ['genre', 'time','movies', 'day'],
         data() {
             return {
 

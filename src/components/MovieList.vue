@@ -18,18 +18,21 @@
 
 <script>
     import MovieItem from "./MovieItem";
+    import times from "../util/times";
 
     export default {
         name: "MovieList",
         props: ['genre', 'time','movies', 'day'],
         data() {
             return {
-
+                times
             }
         },
         computed: {
             filteredMovies() {
-                return this.movies.filter(this.filteredPassesGenreMovies);
+                return this.movies
+                    .filter(this.filteredPassesGenreMovies)
+                    .filter(movie => movie.sessions.find(this.sessionPassesTimeFilter));
             }
         },
         methods: {
@@ -46,6 +49,17 @@
                       }
                    })
                 return matched;
+            },
+            sessionPassesTimeFilter(session) {
+                if(!this.day.isSame(session.time,'day')) {
+                    return false;
+                } else if(this.time.length === 0 || this.time.length === 2) {
+                    return true;
+                } else if(this.time[0] === times.AFTER_6PM) {
+                    return this.$moment(session.time).hour() >= 18;
+                } else {
+                    return this.$moment(session.time).hour() < 18;
+                }
             }
         },
         components: {

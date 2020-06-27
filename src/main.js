@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import './style.scss';
 import axios from 'axios';
-import Overview from "./components/Overview";
 import moment from 'moment-timezone';
 import {checkFilter} from './util/bus'
 import VueRouter from "vue-router";
@@ -27,9 +26,6 @@ new Vue({
         moment,
         day: moment(),
         bus
-    },
-    components: {
-        Overview
     },
     created() {
        axios.get('/api').then(response => {

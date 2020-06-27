@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue.js Cinema</title>
+    <title>Cinema Project</title>
     <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <style>
@@ -16,9 +16,9 @@
 <div id="app">
     <div id="title">
         <img src="/public/logo.png" alt="Logo">
-        <h1>Vue.js Cinema</h1>
+        <h1>Cinema Project</h1>
     </div>
-    <overview :genre="genre" :time="time" :movies="movies" :day="day"></overview>
+    <router-view :genre="genre" :time="time" :movies="movies" :day="day"></router-view>
 </div>
 <script src="/dist/build.js"></script>
 </body>

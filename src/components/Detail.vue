@@ -6,7 +6,10 @@
 
 <script>
     export default {
-        name: "Detail"
+        name: "Detail",
+        created() {
+            console.log(this.$route.params.id);
+        }
     }
 </script>
 

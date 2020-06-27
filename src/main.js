@@ -4,6 +4,7 @@ import axios from 'axios';
 import MovieList from "./components/MovieList";
 import MovieFilter from "./components/MovieFilter";
 import moment from 'moment-timezone';
+import { checkFilter } from './util/bus'
 
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -23,16 +24,6 @@ new Vue({
         day: moment(),
         bus
     },
-    methods: {
-      checkFilter(category, title, checked) {
-          if(checked) {
-              this[category].push(title);
-          } else {
-              let index = this[category].indexOf(title);
-              this[category].splice(index, 1);
-          }
-      }
-    },
     components: {
         MovieList,
         MovieFilter
@@ -40,7 +31,7 @@ new Vue({
     created() {
        axios.get('/api').then(response => {
            this.movies = response.data;
-           this.$bus.$on('check-filter', this.checkFilter)
+           this.$bus.$on('check-filter', checkFilter.bind(this))
        })
     }
 });

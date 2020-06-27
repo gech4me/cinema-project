@@ -10,6 +10,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 moment.tz.setDefault("UTC");
 Object.defineProperty(Vue.prototype,'$moment',{ get() { return this.$root.moment; }});
 
+const bus = new Vue();
+Object.defineProperty(Vue.prototype,'$bus',{ get() { return this.$root.bus }})
+
 new Vue({
     el: '#app',
     data: {
@@ -17,7 +20,8 @@ new Vue({
         time: [],
         movies: [],
         moment,
-        day: moment()
+        day: moment(),
+        bus
     },
     methods: {
       checkFilter(category, title, checked) {
@@ -36,6 +40,7 @@ new Vue({
     created() {
        axios.get('/api').then(response => {
            this.movies = response.data;
+           this.$bus.$on('check-filter', this.checkFilter)
        })
     }
 });

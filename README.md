@@ -14,13 +14,13 @@
         ```
         cd /path/to/install/location
         
-        git clone https://github.com/[your_username]/vuejs-cinema.git
+        git clone https://github.com/[your_username]/cinema-project.git
         ```  
    
 2. Change into directory
 
     ```
-    cd vuejs-cinema
+    cd cinema-project
     ```
     
 3. Install dependencies

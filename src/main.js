@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import './style.scss';
 import axios from 'axios';
-import MovieList from "./components/MovieList";
-import MovieFilter from "./components/MovieFilter";
+import Overview from "./components/Overview";
 import moment from 'moment-timezone';
 import { checkFilter } from './util/bus'
 
@@ -25,8 +24,7 @@ new Vue({
         bus
     },
     components: {
-        MovieList,
-        MovieFilter
+        Overview
     },
     created() {
        axios.get('/api').then(response => {

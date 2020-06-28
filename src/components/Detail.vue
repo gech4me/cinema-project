@@ -1,6 +1,10 @@
 <template>
     <div id="detail" v-if="movie">
-        <movie-item :movie="movie.movie"></movie-item>
+        <movie-item :movie="movie.movie">
+            <div class="movie-details">
+                <p class="movie-genre">{{ movie.movie.Genre }}</p>
+            </div>
+        </movie-item>
     </div>
 </template>
 

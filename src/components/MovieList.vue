@@ -5,6 +5,7 @@
         <div class="movie-sessions">
           <div
             v-for="session in filteredSessions(movie.sessions)"
+            v-tooltip="{ seats: session.seats }"
             class="session-time-wrapper"
           >
             <div class="session-time">

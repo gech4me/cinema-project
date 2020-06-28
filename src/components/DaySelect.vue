@@ -16,6 +16,9 @@
         },
         methods: {
             formatDay(raw) {
+                if(raw.isSame(this.$moment(),'day')) {
+                    return 'Today'
+                }
                 return raw.format('ddd DD/MM')
             }
         }

@@ -12,6 +12,9 @@
                 </table>
             </div>
         </movie-item>
+        <div class="home">
+            <router-link :to="{ name: 'home' }">Back to results</router-link>
+        </div>
     </div>
 </template>
 

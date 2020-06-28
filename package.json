@@ -43,7 +43,7 @@
     "uglify-js": "~3.0.28",
     "vue": "~2.1.0",
     "vue-loader": "~10.0.0",
-    "vue-router": "~2.1.1",
+    "vue-router": "^3.3.4",
     "vue-style-loader": "~1.0.0",
     "vue-template-compiler": "~2.1.0",
     "webpack": "~2.7.0",

@@ -1,4 +1,4 @@
-import {addClass, removeClass} from "./helpers";
+import { addClass, removeClass } from "./helpers";
 
 let mouseHoverHandler = function (event) {
   let span = event.target.parentNode.getElementsByTagName("SPAN")[0];

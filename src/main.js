@@ -2,7 +2,7 @@ import Vue from "vue";
 import "./style.scss";
 import axios from "axios";
 import moment from "moment-timezone";
-import {checkFilter, setDay} from "./util/bus";
+import { checkFilter, setDay } from "./util/bus";
 import VueRouter from "vue-router";
 import routes from "./util/routes";
 import tooltip from "./util/tooltip";

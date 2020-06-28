@@ -2,7 +2,7 @@ import Vue from 'vue';
 import './style.scss';
 import axios from 'axios';
 import moment from 'moment-timezone';
-import {checkFilter} from './util/bus'
+import {checkFilter, setDay} from './util/bus'
 import VueRouter from "vue-router";
 import routes from "./util/routes";
 
@@ -28,10 +28,11 @@ new Vue({
         bus
     },
     created() {
-       axios.get('/api').then(response => {
-           this.movies = response.data;
-           this.$bus.$on('check-filter', checkFilter.bind(this))
-       })
+           axios.get('/api').then(response => {
+               this.movies = response.data;
+           });
+        this.$bus.$on('check-filter', checkFilter.bind(this));
+        this.$bus.$on('set-day', setDay.bind(this));
     },
     router
 });

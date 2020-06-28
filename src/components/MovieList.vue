@@ -6,6 +6,7 @@
           <div
             v-for="session in filteredSessions(movie.sessions)"
             v-tooltip="{ seats: session.seats }"
+            :key="session.id"
             class="session-time-wrapper tooltip-wrapper"
           >
             <div class="session-time">
